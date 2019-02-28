@@ -1,5 +1,6 @@
 1.5.0(2019/02/15)
 ----------------
+- Update logic to recognize when no headerlets were found in database. [#87]
 
 - Fixed a bug in converting a ``PC`` to a ``CD`` matrix. [#77]
 
@@ -11,7 +12,7 @@
   the MAST TEST server which is publicly accessible. [#74]
 
 - Gracefully ignore when the astrometry database returns an empty result for
-  an image. [#84] 
+  an image. [#84]
 
 - Insure updatewcs works with WFPC2 data while supporting HDUList inputs. [#85]
 
