@@ -149,7 +149,6 @@ class AstrometryDB(object):
         """
         if not self.perform_step:
             return
-
         obsroot = obsname[0].header.get('rootname', None)
         observationID = obsroot.split('_')[:1][0]
         logger.info("Updating astrometry for {}".format(observationID))
@@ -158,7 +157,7 @@ class AstrometryDB(object):
         hdrnames = headerlet.get_headerlet_kw_names(obsname, 'hdrname')
 
         headerlets, best_solution_id = self.getObservation(observationID)
-        if headerlets is None:
+        if headerlets is None or len(headerlets)==0:
             logger.warning("Problems getting solutions from database")
             logger.warning(" NO Updates performed for {}".format(
                            observationID))
